@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
-from .models import Curso, Avaliacao
-from .serializers import CursoSerializer, AvaliacaoSerializer
+from ..models import Curso, Avaliacao
+from ..serializers import CursoSerializer, AvaliacaoSerializer
 
 
 class CursosAPIView(generics.ListCreateAPIView):
