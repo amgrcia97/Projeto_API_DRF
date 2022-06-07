@@ -3,4 +3,9 @@ Projeto de criação de API com Django REST Framework
 
 Comandos Importantes:
 
->>> Ativar env: c:/Users/user/Projeto_API_DRF/.env/Scripts/Activate.ps1
+>>> Ativar env: .env/Scripts/Activate.ps1
+
+Requirements:
+
+>>> pip freeze > requirements.txt
+>>> pip install -r requirements.txt
