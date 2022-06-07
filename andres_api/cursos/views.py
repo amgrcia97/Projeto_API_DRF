@@ -78,6 +78,6 @@ class AvaliacaoViewSet(
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
     mixins.DestroyModelMixin,
-    viewsets.GenericViewSet):  # mesma coisa que o anterior
+    viewsets.GenericViewSet):  # mesma coisa que o anterior (API V1)
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
