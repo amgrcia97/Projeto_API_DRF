@@ -6,8 +6,11 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import mixins
 
+from rest_framework import permissions
+
 from .models import Curso, Avaliacao
 from .serializers import CursoSerializer, AvaliacaoSerializer
+from .permissions import IsSuperUser
 
 '''API V1'''
 
@@ -45,13 +48,17 @@ class AvaliacaoAPIView(generics.RetrieveUpdateDestroyAPIView):
 '''API V2'''
 
 class CursoViewSet(viewsets.ModelViewSet):
+    permission_classes = (
+        IsSuperUser,
+        permissions.DjangoModelPermissions, 
+    )
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
 
     @action(detail=True, methods=['GET'])
     def avaliacoes(self, request, pk=None):
         '''Efetua a listagem das avaliações de um curso'''
-        self.pagination_class.page_size = 10
+        self.pagination_class.page_size = 5
         avaliacoes = Avaliacao.objects.filter(curso_id=pk)
         page = self.paginate_queryset(avaliacoes)
         if page is not None:

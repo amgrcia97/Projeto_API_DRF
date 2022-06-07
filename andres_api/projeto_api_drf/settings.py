@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 
-Token: 71091afc15c49a77174246726d3e5aa33da191ab
+Token Django: 71091afc15c49a77174246726d3e5aa33da191ab
+
+Token andres: a5e7184fa69960d979971be85295771a5ee0f766
 
 """
 
@@ -145,5 +147,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 5
 }
