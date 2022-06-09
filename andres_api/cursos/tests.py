@@ -4,7 +4,8 @@ from django.test import TransactionTestCase
 
 
 class Testes(TransactionTestCase):
-    
+    # ## para rodar precisa primeiro ativar o localserver ##
+
     def setUp(self):
         self.headers = {
             'Authorization': "Token a5e7184fa69960d979971be85295771a5ee0f766",
